@@ -44,7 +44,12 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Expense Tracker'),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset('assets/images/logo.png'), // Add your logo asset here
+        ),
       ),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -70,8 +75,12 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _submitEntry,
-              child: const Text('Submit'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green, // Change button color to green
+              ),
+              child: const Text('Submit',style: TextStyle(color: Colors.white),),
             ),
+
             const SizedBox(height: 20),
             Text(
               'Total Income: $totalIncome',
